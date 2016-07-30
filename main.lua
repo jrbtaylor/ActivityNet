@@ -1,6 +1,4 @@
--- main file
--- just do background vs action detection for now, then add another net for action classification
--- this removes some of the computational burden and balances the classes (lots of background)
+-- main file for activitynet challenge
 
 require 'cutorch'
 require 'paths'
@@ -41,8 +39,6 @@ torch.setdefaulttensortype('torch.FloatTensor')
 -- 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 paths.dofile('model.lua')
---paths.dofile('dataset.lua')
---loader = dataLoader(opt.fps,opt.datapath)
 if opt.workers>1 then
   paths.dofile('trainThreads.lua')
 else
